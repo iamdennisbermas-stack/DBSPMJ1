@@ -1,0 +1,13 @@
+- Reference: "PRE000001"
+  LeadName: "Jane Smith"
+  LeadEmail: "jane.smith@prospect.com"
+  SalesforceUser: "John Doe"
+  ConsultantEmail: "consultant@knoticasolutions.com"
+  StartDate: null
+  EndDate: null
+  SuspendDate: null
+  MainCategory: "ITSR"
+  SubCategory: "ITSR-ARCH"
+  Consultant: "Alice Johnson"
+  Status: "NEW"
+  Notes: "Follow-Up: Discovery Call Notes & Next Steps"

@@ -1,0 +1,36 @@
+name: PRECON Unified Status Automation
+
+on:
+  push:
+    paths:
+      - 'PMJ/Stage2_CONSULT/PRECON/precon_trigger_*.yaml'
+
+jobs:
+  handle-precon-status-change:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Detect Trigger File and Process Status
+        env:
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+        run: |
+          TRIGGER_FILE=$(ls PMJ/Stage2_CONSULT/PRECON/precon_trigger_*.yaml | head -n 1)
+          if [ -n "$TRIGGER_FILE" ]; then
+            python PMJ/Stage2_CONSULT/PRECON/precon.py "$TRIGGER_FILE"
+          else
+            echo "No status trigger file detected."
+          fi

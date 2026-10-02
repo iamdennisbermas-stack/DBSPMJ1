@@ -1,0 +1,5 @@
+- Reference: "SPI000001"
+  CustomerName: "Jane Smith"
+  CustomerEmail: "jane.smith@prospect.com"
+  SalesforceEmail: "john.doe@company.com"
+  Status: "QUALIFIED"

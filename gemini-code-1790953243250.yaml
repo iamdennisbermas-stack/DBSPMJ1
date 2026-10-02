@@ -1,0 +1,11 @@
+templates:
+  - id: "STD_INTRO"
+    subject: "Introducing Knotica Solutions - Supply Chain Integration"
+    body: |
+      Dear {Name},
+
+      We connect supply chains to be integrated, seamless, and at speed.
+      We would love to discuss how our CRM and ERP solutions can help your organization.
+
+      Best regards,
+      Knotica Solutions Team
